@@ -35,7 +35,7 @@ function updateClock() {
     // Calculate display time
     const totalMinutes = currentHour * 60 + currentMinute;
     const roundedTotalMinutes = Math.round(totalMinutes);
-    const displayHour = Math.floor(roundedTotalMinutes / 60) % 24;
+    const displayHour = (Math.floor(roundedTotalMinutes / 60) % 12) || 12;
     const displayMinute = roundedTotalMinutes % 60;
     digitalTime.textContent = `${String(displayHour).padStart(2, '0')}:${String(displayMinute).padStart(2, '0')}`;
 
